@@ -10,10 +10,14 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VacuumGlazingRouteImport } from './routes/vacuum-glazing'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as SurveyRouteImport } from './routes/survey'
 import { Route as ShowroomRouteImport } from './routes/showroom'
 import { Route as SecondaryGlazingRouteImport } from './routes/secondary-glazing'
 import { Route as SashWindowsRouteImport } from './routes/sash-windows'
+import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as ProcessRouteImport } from './routes/process'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PerformanceRouteImport } from './routes/performance'
 import { Route as ManagingAgentsRouteImport } from './routes/managing-agents'
 import { Route as InteriorDesignersRouteImport } from './routes/interior-designers'
@@ -21,6 +25,8 @@ import { Route as HomeownersRouteImport } from './routes/homeowners'
 import { Route as Epc2026RouteImport } from './routes/epc-2026'
 import { Route as DraughtproofingRouteImport } from './routes/draughtproofing'
 import { Route as DevelopersRouteImport } from './routes/developers'
+import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CasementWindowsRouteImport } from './routes/casement-windows'
 import { Route as ArchitectsRouteImport } from './routes/architects'
 import { Route as AboutRouteImport } from './routes/about'
@@ -31,6 +37,16 @@ import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug
 const VacuumGlazingRoute = VacuumGlazingRouteImport.update({
   id: '/vacuum-glazing',
   path: '/vacuum-glazing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SurveyRoute = SurveyRouteImport.update({
+  id: '/survey',
+  path: '/survey',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShowroomRoute = ShowroomRouteImport.update({
@@ -48,9 +64,19 @@ const SashWindowsRoute = SashWindowsRouteImport.update({
   path: '/sash-windows',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProcessRoute = ProcessRouteImport.update({
   id: '/process',
   path: '/process',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PerformanceRoute = PerformanceRouteImport.update({
@@ -86,6 +112,16 @@ const DraughtproofingRoute = DraughtproofingRouteImport.update({
 const DevelopersRoute = DevelopersRouteImport.update({
   id: '/developers',
   path: '/developers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CasementWindowsRoute = CasementWindowsRouteImport.update({
@@ -124,6 +160,8 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/architects': typeof ArchitectsRoute
   '/casement-windows': typeof CasementWindowsRoute
+  '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/developers': typeof DevelopersRoute
   '/draughtproofing': typeof DraughtproofingRoute
   '/epc-2026': typeof Epc2026Route
@@ -131,10 +169,14 @@ export interface FileRoutesByFullPath {
   '/interior-designers': typeof InteriorDesignersRoute
   '/managing-agents': typeof ManagingAgentsRoute
   '/performance': typeof PerformanceRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
+  '/resources': typeof ResourcesRoute
   '/sash-windows': typeof SashWindowsRoute
   '/secondary-glazing': typeof SecondaryGlazingRoute
   '/showroom': typeof ShowroomRoute
+  '/survey': typeof SurveyRoute
+  '/terms': typeof TermsRoute
   '/vacuum-glazing': typeof VacuumGlazingRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
@@ -144,6 +186,8 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/architects': typeof ArchitectsRoute
   '/casement-windows': typeof CasementWindowsRoute
+  '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/developers': typeof DevelopersRoute
   '/draughtproofing': typeof DraughtproofingRoute
   '/epc-2026': typeof Epc2026Route
@@ -151,10 +195,14 @@ export interface FileRoutesByTo {
   '/interior-designers': typeof InteriorDesignersRoute
   '/managing-agents': typeof ManagingAgentsRoute
   '/performance': typeof PerformanceRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
+  '/resources': typeof ResourcesRoute
   '/sash-windows': typeof SashWindowsRoute
   '/secondary-glazing': typeof SecondaryGlazingRoute
   '/showroom': typeof ShowroomRoute
+  '/survey': typeof SurveyRoute
+  '/terms': typeof TermsRoute
   '/vacuum-glazing': typeof VacuumGlazingRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/case-studies': typeof CaseStudiesIndexRoute
@@ -165,6 +213,8 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/architects': typeof ArchitectsRoute
   '/casement-windows': typeof CasementWindowsRoute
+  '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/developers': typeof DevelopersRoute
   '/draughtproofing': typeof DraughtproofingRoute
   '/epc-2026': typeof Epc2026Route
@@ -172,10 +222,14 @@ export interface FileRoutesById {
   '/interior-designers': typeof InteriorDesignersRoute
   '/managing-agents': typeof ManagingAgentsRoute
   '/performance': typeof PerformanceRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
+  '/resources': typeof ResourcesRoute
   '/sash-windows': typeof SashWindowsRoute
   '/secondary-glazing': typeof SecondaryGlazingRoute
   '/showroom': typeof ShowroomRoute
+  '/survey': typeof SurveyRoute
+  '/terms': typeof TermsRoute
   '/vacuum-glazing': typeof VacuumGlazingRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
@@ -187,6 +241,8 @@ export interface FileRouteTypes {
     | '/about'
     | '/architects'
     | '/casement-windows'
+    | '/contact'
+    | '/cookies'
     | '/developers'
     | '/draughtproofing'
     | '/epc-2026'
@@ -194,10 +250,14 @@ export interface FileRouteTypes {
     | '/interior-designers'
     | '/managing-agents'
     | '/performance'
+    | '/privacy'
     | '/process'
+    | '/resources'
     | '/sash-windows'
     | '/secondary-glazing'
     | '/showroom'
+    | '/survey'
+    | '/terms'
     | '/vacuum-glazing'
     | '/case-studies/$slug'
     | '/case-studies/'
@@ -207,6 +267,8 @@ export interface FileRouteTypes {
     | '/about'
     | '/architects'
     | '/casement-windows'
+    | '/contact'
+    | '/cookies'
     | '/developers'
     | '/draughtproofing'
     | '/epc-2026'
@@ -214,10 +276,14 @@ export interface FileRouteTypes {
     | '/interior-designers'
     | '/managing-agents'
     | '/performance'
+    | '/privacy'
     | '/process'
+    | '/resources'
     | '/sash-windows'
     | '/secondary-glazing'
     | '/showroom'
+    | '/survey'
+    | '/terms'
     | '/vacuum-glazing'
     | '/case-studies/$slug'
     | '/case-studies'
@@ -227,6 +293,8 @@ export interface FileRouteTypes {
     | '/about'
     | '/architects'
     | '/casement-windows'
+    | '/contact'
+    | '/cookies'
     | '/developers'
     | '/draughtproofing'
     | '/epc-2026'
@@ -234,10 +302,14 @@ export interface FileRouteTypes {
     | '/interior-designers'
     | '/managing-agents'
     | '/performance'
+    | '/privacy'
     | '/process'
+    | '/resources'
     | '/sash-windows'
     | '/secondary-glazing'
     | '/showroom'
+    | '/survey'
+    | '/terms'
     | '/vacuum-glazing'
     | '/case-studies/$slug'
     | '/case-studies/'
@@ -248,6 +320,8 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ArchitectsRoute: typeof ArchitectsRoute
   CasementWindowsRoute: typeof CasementWindowsRoute
+  ContactRoute: typeof ContactRoute
+  CookiesRoute: typeof CookiesRoute
   DevelopersRoute: typeof DevelopersRoute
   DraughtproofingRoute: typeof DraughtproofingRoute
   Epc2026Route: typeof Epc2026Route
@@ -255,10 +329,14 @@ export interface RootRouteChildren {
   InteriorDesignersRoute: typeof InteriorDesignersRoute
   ManagingAgentsRoute: typeof ManagingAgentsRoute
   PerformanceRoute: typeof PerformanceRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProcessRoute: typeof ProcessRoute
+  ResourcesRoute: typeof ResourcesRoute
   SashWindowsRoute: typeof SashWindowsRoute
   SecondaryGlazingRoute: typeof SecondaryGlazingRoute
   ShowroomRoute: typeof ShowroomRoute
+  SurveyRoute: typeof SurveyRoute
+  TermsRoute: typeof TermsRoute
   VacuumGlazingRoute: typeof VacuumGlazingRoute
   CaseStudiesSlugRoute: typeof CaseStudiesSlugRoute
   CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
@@ -271,6 +349,20 @@ declare module '@tanstack/react-router' {
       path: '/vacuum-glazing'
       fullPath: '/vacuum-glazing'
       preLoaderRoute: typeof VacuumGlazingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/survey': {
+      id: '/survey'
+      path: '/survey'
+      fullPath: '/survey'
+      preLoaderRoute: typeof SurveyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/showroom': {
@@ -294,11 +386,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SashWindowsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/process': {
       id: '/process'
       path: '/process'
       fullPath: '/process'
       preLoaderRoute: typeof ProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/performance': {
@@ -348,6 +454,20 @@ declare module '@tanstack/react-router' {
       path: '/developers'
       fullPath: '/developers'
       preLoaderRoute: typeof DevelopersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/casement-windows': {
@@ -400,6 +520,8 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ArchitectsRoute: ArchitectsRoute,
   CasementWindowsRoute: CasementWindowsRoute,
+  ContactRoute: ContactRoute,
+  CookiesRoute: CookiesRoute,
   DevelopersRoute: DevelopersRoute,
   DraughtproofingRoute: DraughtproofingRoute,
   Epc2026Route: Epc2026Route,
@@ -407,10 +529,14 @@ const rootRouteChildren: RootRouteChildren = {
   InteriorDesignersRoute: InteriorDesignersRoute,
   ManagingAgentsRoute: ManagingAgentsRoute,
   PerformanceRoute: PerformanceRoute,
+  PrivacyRoute: PrivacyRoute,
   ProcessRoute: ProcessRoute,
+  ResourcesRoute: ResourcesRoute,
   SashWindowsRoute: SashWindowsRoute,
   SecondaryGlazingRoute: SecondaryGlazingRoute,
   ShowroomRoute: ShowroomRoute,
+  SurveyRoute: SurveyRoute,
+  TermsRoute: TermsRoute,
   VacuumGlazingRoute: VacuumGlazingRoute,
   CaseStudiesSlugRoute: CaseStudiesSlugRoute,
   CaseStudiesIndexRoute: CaseStudiesIndexRoute,
