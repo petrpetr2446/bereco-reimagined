@@ -12,8 +12,13 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as VacuumGlazingRouteImport } from './routes/vacuum-glazing'
 import { Route as SecondaryGlazingRouteImport } from './routes/secondary-glazing'
 import { Route as SashWindowsRouteImport } from './routes/sash-windows'
+import { Route as ManagingAgentsRouteImport } from './routes/managing-agents'
+import { Route as InteriorDesignersRouteImport } from './routes/interior-designers'
+import { Route as HomeownersRouteImport } from './routes/homeowners'
 import { Route as DraughtproofingRouteImport } from './routes/draughtproofing'
+import { Route as DevelopersRouteImport } from './routes/developers'
 import { Route as CasementWindowsRouteImport } from './routes/casement-windows'
+import { Route as ArchitectsRouteImport } from './routes/architects'
 import { Route as IndexRouteImport } from './routes/index'
 
 const VacuumGlazingRoute = VacuumGlazingRouteImport.update({
@@ -31,14 +36,39 @@ const SashWindowsRoute = SashWindowsRouteImport.update({
   path: '/sash-windows',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ManagingAgentsRoute = ManagingAgentsRouteImport.update({
+  id: '/managing-agents',
+  path: '/managing-agents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InteriorDesignersRoute = InteriorDesignersRouteImport.update({
+  id: '/interior-designers',
+  path: '/interior-designers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeownersRoute = HomeownersRouteImport.update({
+  id: '/homeowners',
+  path: '/homeowners',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DraughtproofingRoute = DraughtproofingRouteImport.update({
   id: '/draughtproofing',
   path: '/draughtproofing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DevelopersRoute = DevelopersRouteImport.update({
+  id: '/developers',
+  path: '/developers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CasementWindowsRoute = CasementWindowsRouteImport.update({
   id: '/casement-windows',
   path: '/casement-windows',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArchitectsRoute = ArchitectsRouteImport.update({
+  id: '/architects',
+  path: '/architects',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -49,16 +79,26 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/architects': typeof ArchitectsRoute
   '/casement-windows': typeof CasementWindowsRoute
+  '/developers': typeof DevelopersRoute
   '/draughtproofing': typeof DraughtproofingRoute
+  '/homeowners': typeof HomeownersRoute
+  '/interior-designers': typeof InteriorDesignersRoute
+  '/managing-agents': typeof ManagingAgentsRoute
   '/sash-windows': typeof SashWindowsRoute
   '/secondary-glazing': typeof SecondaryGlazingRoute
   '/vacuum-glazing': typeof VacuumGlazingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/architects': typeof ArchitectsRoute
   '/casement-windows': typeof CasementWindowsRoute
+  '/developers': typeof DevelopersRoute
   '/draughtproofing': typeof DraughtproofingRoute
+  '/homeowners': typeof HomeownersRoute
+  '/interior-designers': typeof InteriorDesignersRoute
+  '/managing-agents': typeof ManagingAgentsRoute
   '/sash-windows': typeof SashWindowsRoute
   '/secondary-glazing': typeof SecondaryGlazingRoute
   '/vacuum-glazing': typeof VacuumGlazingRoute
@@ -66,8 +106,13 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/architects': typeof ArchitectsRoute
   '/casement-windows': typeof CasementWindowsRoute
+  '/developers': typeof DevelopersRoute
   '/draughtproofing': typeof DraughtproofingRoute
+  '/homeowners': typeof HomeownersRoute
+  '/interior-designers': typeof InteriorDesignersRoute
+  '/managing-agents': typeof ManagingAgentsRoute
   '/sash-windows': typeof SashWindowsRoute
   '/secondary-glazing': typeof SecondaryGlazingRoute
   '/vacuum-glazing': typeof VacuumGlazingRoute
@@ -76,24 +121,39 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/architects'
     | '/casement-windows'
+    | '/developers'
     | '/draughtproofing'
+    | '/homeowners'
+    | '/interior-designers'
+    | '/managing-agents'
     | '/sash-windows'
     | '/secondary-glazing'
     | '/vacuum-glazing'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/architects'
     | '/casement-windows'
+    | '/developers'
     | '/draughtproofing'
+    | '/homeowners'
+    | '/interior-designers'
+    | '/managing-agents'
     | '/sash-windows'
     | '/secondary-glazing'
     | '/vacuum-glazing'
   id:
     | '__root__'
     | '/'
+    | '/architects'
     | '/casement-windows'
+    | '/developers'
     | '/draughtproofing'
+    | '/homeowners'
+    | '/interior-designers'
+    | '/managing-agents'
     | '/sash-windows'
     | '/secondary-glazing'
     | '/vacuum-glazing'
@@ -101,8 +161,13 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArchitectsRoute: typeof ArchitectsRoute
   CasementWindowsRoute: typeof CasementWindowsRoute
+  DevelopersRoute: typeof DevelopersRoute
   DraughtproofingRoute: typeof DraughtproofingRoute
+  HomeownersRoute: typeof HomeownersRoute
+  InteriorDesignersRoute: typeof InteriorDesignersRoute
+  ManagingAgentsRoute: typeof ManagingAgentsRoute
   SashWindowsRoute: typeof SashWindowsRoute
   SecondaryGlazingRoute: typeof SecondaryGlazingRoute
   VacuumGlazingRoute: typeof VacuumGlazingRoute
@@ -131,6 +196,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SashWindowsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/managing-agents': {
+      id: '/managing-agents'
+      path: '/managing-agents'
+      fullPath: '/managing-agents'
+      preLoaderRoute: typeof ManagingAgentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interior-designers': {
+      id: '/interior-designers'
+      path: '/interior-designers'
+      fullPath: '/interior-designers'
+      preLoaderRoute: typeof InteriorDesignersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/homeowners': {
+      id: '/homeowners'
+      path: '/homeowners'
+      fullPath: '/homeowners'
+      preLoaderRoute: typeof HomeownersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/draughtproofing': {
       id: '/draughtproofing'
       path: '/draughtproofing'
@@ -138,11 +224,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DraughtproofingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developers': {
+      id: '/developers'
+      path: '/developers'
+      fullPath: '/developers'
+      preLoaderRoute: typeof DevelopersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/casement-windows': {
       id: '/casement-windows'
       path: '/casement-windows'
       fullPath: '/casement-windows'
       preLoaderRoute: typeof CasementWindowsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/architects': {
+      id: '/architects'
+      path: '/architects'
+      fullPath: '/architects'
+      preLoaderRoute: typeof ArchitectsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -157,8 +257,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArchitectsRoute: ArchitectsRoute,
   CasementWindowsRoute: CasementWindowsRoute,
+  DevelopersRoute: DevelopersRoute,
   DraughtproofingRoute: DraughtproofingRoute,
+  HomeownersRoute: HomeownersRoute,
+  InteriorDesignersRoute: InteriorDesignersRoute,
+  ManagingAgentsRoute: ManagingAgentsRoute,
   SashWindowsRoute: SashWindowsRoute,
   SecondaryGlazingRoute: SecondaryGlazingRoute,
   VacuumGlazingRoute: VacuumGlazingRoute,
