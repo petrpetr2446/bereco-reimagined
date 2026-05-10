@@ -10,20 +10,30 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VacuumGlazingRouteImport } from './routes/vacuum-glazing'
+import { Route as ShowroomRouteImport } from './routes/showroom'
 import { Route as SecondaryGlazingRouteImport } from './routes/secondary-glazing'
 import { Route as SashWindowsRouteImport } from './routes/sash-windows'
+import { Route as ProcessRouteImport } from './routes/process'
+import { Route as PerformanceRouteImport } from './routes/performance'
 import { Route as ManagingAgentsRouteImport } from './routes/managing-agents'
 import { Route as InteriorDesignersRouteImport } from './routes/interior-designers'
 import { Route as HomeownersRouteImport } from './routes/homeowners'
+import { Route as Epc2026RouteImport } from './routes/epc-2026'
 import { Route as DraughtproofingRouteImport } from './routes/draughtproofing'
 import { Route as DevelopersRouteImport } from './routes/developers'
 import { Route as CasementWindowsRouteImport } from './routes/casement-windows'
 import { Route as ArchitectsRouteImport } from './routes/architects'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const VacuumGlazingRoute = VacuumGlazingRouteImport.update({
   id: '/vacuum-glazing',
   path: '/vacuum-glazing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShowroomRoute = ShowroomRouteImport.update({
+  id: '/showroom',
+  path: '/showroom',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SecondaryGlazingRoute = SecondaryGlazingRouteImport.update({
@@ -34,6 +44,16 @@ const SecondaryGlazingRoute = SecondaryGlazingRouteImport.update({
 const SashWindowsRoute = SashWindowsRouteImport.update({
   id: '/sash-windows',
   path: '/sash-windows',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcessRoute = ProcessRouteImport.update({
+  id: '/process',
+  path: '/process',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerformanceRoute = PerformanceRouteImport.update({
+  id: '/performance',
+  path: '/performance',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ManagingAgentsRoute = ManagingAgentsRouteImport.update({
@@ -49,6 +69,11 @@ const InteriorDesignersRoute = InteriorDesignersRouteImport.update({
 const HomeownersRoute = HomeownersRouteImport.update({
   id: '/homeowners',
   path: '/homeowners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Epc2026Route = Epc2026RouteImport.update({
+  id: '/epc-2026',
+  path: '/epc-2026',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DraughtproofingRoute = DraughtproofingRouteImport.update({
@@ -71,6 +96,11 @@ const ArchitectsRoute = ArchitectsRouteImport.update({
   path: '/architects',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -79,97 +109,132 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/architects': typeof ArchitectsRoute
   '/casement-windows': typeof CasementWindowsRoute
   '/developers': typeof DevelopersRoute
   '/draughtproofing': typeof DraughtproofingRoute
+  '/epc-2026': typeof Epc2026Route
   '/homeowners': typeof HomeownersRoute
   '/interior-designers': typeof InteriorDesignersRoute
   '/managing-agents': typeof ManagingAgentsRoute
+  '/performance': typeof PerformanceRoute
+  '/process': typeof ProcessRoute
   '/sash-windows': typeof SashWindowsRoute
   '/secondary-glazing': typeof SecondaryGlazingRoute
+  '/showroom': typeof ShowroomRoute
   '/vacuum-glazing': typeof VacuumGlazingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/architects': typeof ArchitectsRoute
   '/casement-windows': typeof CasementWindowsRoute
   '/developers': typeof DevelopersRoute
   '/draughtproofing': typeof DraughtproofingRoute
+  '/epc-2026': typeof Epc2026Route
   '/homeowners': typeof HomeownersRoute
   '/interior-designers': typeof InteriorDesignersRoute
   '/managing-agents': typeof ManagingAgentsRoute
+  '/performance': typeof PerformanceRoute
+  '/process': typeof ProcessRoute
   '/sash-windows': typeof SashWindowsRoute
   '/secondary-glazing': typeof SecondaryGlazingRoute
+  '/showroom': typeof ShowroomRoute
   '/vacuum-glazing': typeof VacuumGlazingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/architects': typeof ArchitectsRoute
   '/casement-windows': typeof CasementWindowsRoute
   '/developers': typeof DevelopersRoute
   '/draughtproofing': typeof DraughtproofingRoute
+  '/epc-2026': typeof Epc2026Route
   '/homeowners': typeof HomeownersRoute
   '/interior-designers': typeof InteriorDesignersRoute
   '/managing-agents': typeof ManagingAgentsRoute
+  '/performance': typeof PerformanceRoute
+  '/process': typeof ProcessRoute
   '/sash-windows': typeof SashWindowsRoute
   '/secondary-glazing': typeof SecondaryGlazingRoute
+  '/showroom': typeof ShowroomRoute
   '/vacuum-glazing': typeof VacuumGlazingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/architects'
     | '/casement-windows'
     | '/developers'
     | '/draughtproofing'
+    | '/epc-2026'
     | '/homeowners'
     | '/interior-designers'
     | '/managing-agents'
+    | '/performance'
+    | '/process'
     | '/sash-windows'
     | '/secondary-glazing'
+    | '/showroom'
     | '/vacuum-glazing'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/architects'
     | '/casement-windows'
     | '/developers'
     | '/draughtproofing'
+    | '/epc-2026'
     | '/homeowners'
     | '/interior-designers'
     | '/managing-agents'
+    | '/performance'
+    | '/process'
     | '/sash-windows'
     | '/secondary-glazing'
+    | '/showroom'
     | '/vacuum-glazing'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/architects'
     | '/casement-windows'
     | '/developers'
     | '/draughtproofing'
+    | '/epc-2026'
     | '/homeowners'
     | '/interior-designers'
     | '/managing-agents'
+    | '/performance'
+    | '/process'
     | '/sash-windows'
     | '/secondary-glazing'
+    | '/showroom'
     | '/vacuum-glazing'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   ArchitectsRoute: typeof ArchitectsRoute
   CasementWindowsRoute: typeof CasementWindowsRoute
   DevelopersRoute: typeof DevelopersRoute
   DraughtproofingRoute: typeof DraughtproofingRoute
+  Epc2026Route: typeof Epc2026Route
   HomeownersRoute: typeof HomeownersRoute
   InteriorDesignersRoute: typeof InteriorDesignersRoute
   ManagingAgentsRoute: typeof ManagingAgentsRoute
+  PerformanceRoute: typeof PerformanceRoute
+  ProcessRoute: typeof ProcessRoute
   SashWindowsRoute: typeof SashWindowsRoute
   SecondaryGlazingRoute: typeof SecondaryGlazingRoute
+  ShowroomRoute: typeof ShowroomRoute
   VacuumGlazingRoute: typeof VacuumGlazingRoute
 }
 
@@ -180,6 +245,13 @@ declare module '@tanstack/react-router' {
       path: '/vacuum-glazing'
       fullPath: '/vacuum-glazing'
       preLoaderRoute: typeof VacuumGlazingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/showroom': {
+      id: '/showroom'
+      path: '/showroom'
+      fullPath: '/showroom'
+      preLoaderRoute: typeof ShowroomRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/secondary-glazing': {
@@ -194,6 +266,20 @@ declare module '@tanstack/react-router' {
       path: '/sash-windows'
       fullPath: '/sash-windows'
       preLoaderRoute: typeof SashWindowsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/process': {
+      id: '/process'
+      path: '/process'
+      fullPath: '/process'
+      preLoaderRoute: typeof ProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/performance': {
+      id: '/performance'
+      path: '/performance'
+      fullPath: '/performance'
+      preLoaderRoute: typeof PerformanceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/managing-agents': {
@@ -215,6 +301,13 @@ declare module '@tanstack/react-router' {
       path: '/homeowners'
       fullPath: '/homeowners'
       preLoaderRoute: typeof HomeownersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/epc-2026': {
+      id: '/epc-2026'
+      path: '/epc-2026'
+      fullPath: '/epc-2026'
+      preLoaderRoute: typeof Epc2026RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/draughtproofing': {
@@ -245,6 +338,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArchitectsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -257,15 +357,20 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   ArchitectsRoute: ArchitectsRoute,
   CasementWindowsRoute: CasementWindowsRoute,
   DevelopersRoute: DevelopersRoute,
   DraughtproofingRoute: DraughtproofingRoute,
+  Epc2026Route: Epc2026Route,
   HomeownersRoute: HomeownersRoute,
   InteriorDesignersRoute: InteriorDesignersRoute,
   ManagingAgentsRoute: ManagingAgentsRoute,
+  PerformanceRoute: PerformanceRoute,
+  ProcessRoute: ProcessRoute,
   SashWindowsRoute: SashWindowsRoute,
   SecondaryGlazingRoute: SecondaryGlazingRoute,
+  ShowroomRoute: ShowroomRoute,
   VacuumGlazingRoute: VacuumGlazingRoute,
 }
 export const routeTree = rootRouteImport
