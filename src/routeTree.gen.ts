@@ -9,38 +9,488 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VacuumGlazingRouteImport } from './routes/vacuum-glazing'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as SurveyRouteImport } from './routes/survey'
+import { Route as ShowroomRouteImport } from './routes/showroom'
+import { Route as SecondaryGlazingRouteImport } from './routes/secondary-glazing'
+import { Route as SashWindowsRouteImport } from './routes/sash-windows'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as ProcessRouteImport } from './routes/process'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PerformanceRouteImport } from './routes/performance'
+import { Route as ManagingAgentsRouteImport } from './routes/managing-agents'
+import { Route as InteriorDesignersRouteImport } from './routes/interior-designers'
+import { Route as HomeownersRouteImport } from './routes/homeowners'
+import { Route as Epc2026RouteImport } from './routes/epc-2026'
+import { Route as DraughtproofingRouteImport } from './routes/draughtproofing'
+import { Route as DevelopersRouteImport } from './routes/developers'
+import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CasementWindowsRouteImport } from './routes/casement-windows'
+import { Route as ArchitectsRouteImport } from './routes/architects'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.index'
+import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
 
+const VacuumGlazingRoute = VacuumGlazingRouteImport.update({
+  id: '/vacuum-glazing',
+  path: '/vacuum-glazing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SurveyRoute = SurveyRouteImport.update({
+  id: '/survey',
+  path: '/survey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShowroomRoute = ShowroomRouteImport.update({
+  id: '/showroom',
+  path: '/showroom',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecondaryGlazingRoute = SecondaryGlazingRouteImport.update({
+  id: '/secondary-glazing',
+  path: '/secondary-glazing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SashWindowsRoute = SashWindowsRouteImport.update({
+  id: '/sash-windows',
+  path: '/sash-windows',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcessRoute = ProcessRouteImport.update({
+  id: '/process',
+  path: '/process',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerformanceRoute = PerformanceRouteImport.update({
+  id: '/performance',
+  path: '/performance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManagingAgentsRoute = ManagingAgentsRouteImport.update({
+  id: '/managing-agents',
+  path: '/managing-agents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InteriorDesignersRoute = InteriorDesignersRouteImport.update({
+  id: '/interior-designers',
+  path: '/interior-designers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeownersRoute = HomeownersRouteImport.update({
+  id: '/homeowners',
+  path: '/homeowners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Epc2026Route = Epc2026RouteImport.update({
+  id: '/epc-2026',
+  path: '/epc-2026',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DraughtproofingRoute = DraughtproofingRouteImport.update({
+  id: '/draughtproofing',
+  path: '/draughtproofing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevelopersRoute = DevelopersRouteImport.update({
+  id: '/developers',
+  path: '/developers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasementWindowsRoute = CasementWindowsRouteImport.update({
+  id: '/casement-windows',
+  path: '/casement-windows',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArchitectsRoute = ArchitectsRouteImport.update({
+  id: '/architects',
+  path: '/architects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CaseStudiesIndexRoute = CaseStudiesIndexRouteImport.update({
+  id: '/case-studies/',
+  path: '/case-studies/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesSlugRoute = CaseStudiesSlugRouteImport.update({
+  id: '/case-studies/$slug',
+  path: '/case-studies/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/architects': typeof ArchitectsRoute
+  '/casement-windows': typeof CasementWindowsRoute
+  '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
+  '/developers': typeof DevelopersRoute
+  '/draughtproofing': typeof DraughtproofingRoute
+  '/epc-2026': typeof Epc2026Route
+  '/homeowners': typeof HomeownersRoute
+  '/interior-designers': typeof InteriorDesignersRoute
+  '/managing-agents': typeof ManagingAgentsRoute
+  '/performance': typeof PerformanceRoute
+  '/privacy': typeof PrivacyRoute
+  '/process': typeof ProcessRoute
+  '/resources': typeof ResourcesRoute
+  '/sash-windows': typeof SashWindowsRoute
+  '/secondary-glazing': typeof SecondaryGlazingRoute
+  '/showroom': typeof ShowroomRoute
+  '/survey': typeof SurveyRoute
+  '/terms': typeof TermsRoute
+  '/vacuum-glazing': typeof VacuumGlazingRoute
+  '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/architects': typeof ArchitectsRoute
+  '/casement-windows': typeof CasementWindowsRoute
+  '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
+  '/developers': typeof DevelopersRoute
+  '/draughtproofing': typeof DraughtproofingRoute
+  '/epc-2026': typeof Epc2026Route
+  '/homeowners': typeof HomeownersRoute
+  '/interior-designers': typeof InteriorDesignersRoute
+  '/managing-agents': typeof ManagingAgentsRoute
+  '/performance': typeof PerformanceRoute
+  '/privacy': typeof PrivacyRoute
+  '/process': typeof ProcessRoute
+  '/resources': typeof ResourcesRoute
+  '/sash-windows': typeof SashWindowsRoute
+  '/secondary-glazing': typeof SecondaryGlazingRoute
+  '/showroom': typeof ShowroomRoute
+  '/survey': typeof SurveyRoute
+  '/terms': typeof TermsRoute
+  '/vacuum-glazing': typeof VacuumGlazingRoute
+  '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/case-studies': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/architects': typeof ArchitectsRoute
+  '/casement-windows': typeof CasementWindowsRoute
+  '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
+  '/developers': typeof DevelopersRoute
+  '/draughtproofing': typeof DraughtproofingRoute
+  '/epc-2026': typeof Epc2026Route
+  '/homeowners': typeof HomeownersRoute
+  '/interior-designers': typeof InteriorDesignersRoute
+  '/managing-agents': typeof ManagingAgentsRoute
+  '/performance': typeof PerformanceRoute
+  '/privacy': typeof PrivacyRoute
+  '/process': typeof ProcessRoute
+  '/resources': typeof ResourcesRoute
+  '/sash-windows': typeof SashWindowsRoute
+  '/secondary-glazing': typeof SecondaryGlazingRoute
+  '/showroom': typeof ShowroomRoute
+  '/survey': typeof SurveyRoute
+  '/terms': typeof TermsRoute
+  '/vacuum-glazing': typeof VacuumGlazingRoute
+  '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/architects'
+    | '/casement-windows'
+    | '/contact'
+    | '/cookies'
+    | '/developers'
+    | '/draughtproofing'
+    | '/epc-2026'
+    | '/homeowners'
+    | '/interior-designers'
+    | '/managing-agents'
+    | '/performance'
+    | '/privacy'
+    | '/process'
+    | '/resources'
+    | '/sash-windows'
+    | '/secondary-glazing'
+    | '/showroom'
+    | '/survey'
+    | '/terms'
+    | '/vacuum-glazing'
+    | '/case-studies/$slug'
+    | '/case-studies/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/architects'
+    | '/casement-windows'
+    | '/contact'
+    | '/cookies'
+    | '/developers'
+    | '/draughtproofing'
+    | '/epc-2026'
+    | '/homeowners'
+    | '/interior-designers'
+    | '/managing-agents'
+    | '/performance'
+    | '/privacy'
+    | '/process'
+    | '/resources'
+    | '/sash-windows'
+    | '/secondary-glazing'
+    | '/showroom'
+    | '/survey'
+    | '/terms'
+    | '/vacuum-glazing'
+    | '/case-studies/$slug'
+    | '/case-studies'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/architects'
+    | '/casement-windows'
+    | '/contact'
+    | '/cookies'
+    | '/developers'
+    | '/draughtproofing'
+    | '/epc-2026'
+    | '/homeowners'
+    | '/interior-designers'
+    | '/managing-agents'
+    | '/performance'
+    | '/privacy'
+    | '/process'
+    | '/resources'
+    | '/sash-windows'
+    | '/secondary-glazing'
+    | '/showroom'
+    | '/survey'
+    | '/terms'
+    | '/vacuum-glazing'
+    | '/case-studies/$slug'
+    | '/case-studies/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ArchitectsRoute: typeof ArchitectsRoute
+  CasementWindowsRoute: typeof CasementWindowsRoute
+  ContactRoute: typeof ContactRoute
+  CookiesRoute: typeof CookiesRoute
+  DevelopersRoute: typeof DevelopersRoute
+  DraughtproofingRoute: typeof DraughtproofingRoute
+  Epc2026Route: typeof Epc2026Route
+  HomeownersRoute: typeof HomeownersRoute
+  InteriorDesignersRoute: typeof InteriorDesignersRoute
+  ManagingAgentsRoute: typeof ManagingAgentsRoute
+  PerformanceRoute: typeof PerformanceRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ProcessRoute: typeof ProcessRoute
+  ResourcesRoute: typeof ResourcesRoute
+  SashWindowsRoute: typeof SashWindowsRoute
+  SecondaryGlazingRoute: typeof SecondaryGlazingRoute
+  ShowroomRoute: typeof ShowroomRoute
+  SurveyRoute: typeof SurveyRoute
+  TermsRoute: typeof TermsRoute
+  VacuumGlazingRoute: typeof VacuumGlazingRoute
+  CaseStudiesSlugRoute: typeof CaseStudiesSlugRoute
+  CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vacuum-glazing': {
+      id: '/vacuum-glazing'
+      path: '/vacuum-glazing'
+      fullPath: '/vacuum-glazing'
+      preLoaderRoute: typeof VacuumGlazingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/survey': {
+      id: '/survey'
+      path: '/survey'
+      fullPath: '/survey'
+      preLoaderRoute: typeof SurveyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/showroom': {
+      id: '/showroom'
+      path: '/showroom'
+      fullPath: '/showroom'
+      preLoaderRoute: typeof ShowroomRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secondary-glazing': {
+      id: '/secondary-glazing'
+      path: '/secondary-glazing'
+      fullPath: '/secondary-glazing'
+      preLoaderRoute: typeof SecondaryGlazingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sash-windows': {
+      id: '/sash-windows'
+      path: '/sash-windows'
+      fullPath: '/sash-windows'
+      preLoaderRoute: typeof SashWindowsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/process': {
+      id: '/process'
+      path: '/process'
+      fullPath: '/process'
+      preLoaderRoute: typeof ProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/performance': {
+      id: '/performance'
+      path: '/performance'
+      fullPath: '/performance'
+      preLoaderRoute: typeof PerformanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/managing-agents': {
+      id: '/managing-agents'
+      path: '/managing-agents'
+      fullPath: '/managing-agents'
+      preLoaderRoute: typeof ManagingAgentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interior-designers': {
+      id: '/interior-designers'
+      path: '/interior-designers'
+      fullPath: '/interior-designers'
+      preLoaderRoute: typeof InteriorDesignersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/homeowners': {
+      id: '/homeowners'
+      path: '/homeowners'
+      fullPath: '/homeowners'
+      preLoaderRoute: typeof HomeownersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/epc-2026': {
+      id: '/epc-2026'
+      path: '/epc-2026'
+      fullPath: '/epc-2026'
+      preLoaderRoute: typeof Epc2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/draughtproofing': {
+      id: '/draughtproofing'
+      path: '/draughtproofing'
+      fullPath: '/draughtproofing'
+      preLoaderRoute: typeof DraughtproofingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developers': {
+      id: '/developers'
+      path: '/developers'
+      fullPath: '/developers'
+      preLoaderRoute: typeof DevelopersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casement-windows': {
+      id: '/casement-windows'
+      path: '/casement-windows'
+      fullPath: '/casement-windows'
+      preLoaderRoute: typeof CasementWindowsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/architects': {
+      id: '/architects'
+      path: '/architects'
+      fullPath: '/architects'
+      preLoaderRoute: typeof ArchitectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +498,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/case-studies/': {
+      id: '/case-studies/'
+      path: '/case-studies'
+      fullPath: '/case-studies/'
+      preLoaderRoute: typeof CaseStudiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies/$slug': {
+      id: '/case-studies/$slug'
+      path: '/case-studies/$slug'
+      fullPath: '/case-studies/$slug'
+      preLoaderRoute: typeof CaseStudiesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ArchitectsRoute: ArchitectsRoute,
+  CasementWindowsRoute: CasementWindowsRoute,
+  ContactRoute: ContactRoute,
+  CookiesRoute: CookiesRoute,
+  DevelopersRoute: DevelopersRoute,
+  DraughtproofingRoute: DraughtproofingRoute,
+  Epc2026Route: Epc2026Route,
+  HomeownersRoute: HomeownersRoute,
+  InteriorDesignersRoute: InteriorDesignersRoute,
+  ManagingAgentsRoute: ManagingAgentsRoute,
+  PerformanceRoute: PerformanceRoute,
+  PrivacyRoute: PrivacyRoute,
+  ProcessRoute: ProcessRoute,
+  ResourcesRoute: ResourcesRoute,
+  SashWindowsRoute: SashWindowsRoute,
+  SecondaryGlazingRoute: SecondaryGlazingRoute,
+  ShowroomRoute: ShowroomRoute,
+  SurveyRoute: SurveyRoute,
+  TermsRoute: TermsRoute,
+  VacuumGlazingRoute: VacuumGlazingRoute,
+  CaseStudiesSlugRoute: CaseStudiesSlugRoute,
+  CaseStudiesIndexRoute: CaseStudiesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
