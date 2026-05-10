@@ -9,8 +9,38 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VacuumGlazingRouteImport } from './routes/vacuum-glazing'
+import { Route as SecondaryGlazingRouteImport } from './routes/secondary-glazing'
+import { Route as SashWindowsRouteImport } from './routes/sash-windows'
+import { Route as DraughtproofingRouteImport } from './routes/draughtproofing'
+import { Route as CasementWindowsRouteImport } from './routes/casement-windows'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VacuumGlazingRoute = VacuumGlazingRouteImport.update({
+  id: '/vacuum-glazing',
+  path: '/vacuum-glazing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecondaryGlazingRoute = SecondaryGlazingRouteImport.update({
+  id: '/secondary-glazing',
+  path: '/secondary-glazing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SashWindowsRoute = SashWindowsRouteImport.update({
+  id: '/sash-windows',
+  path: '/sash-windows',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DraughtproofingRoute = DraughtproofingRouteImport.update({
+  id: '/draughtproofing',
+  path: '/draughtproofing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasementWindowsRoute = CasementWindowsRouteImport.update({
+  id: '/casement-windows',
+  path: '/casement-windows',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +49,102 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/casement-windows': typeof CasementWindowsRoute
+  '/draughtproofing': typeof DraughtproofingRoute
+  '/sash-windows': typeof SashWindowsRoute
+  '/secondary-glazing': typeof SecondaryGlazingRoute
+  '/vacuum-glazing': typeof VacuumGlazingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/casement-windows': typeof CasementWindowsRoute
+  '/draughtproofing': typeof DraughtproofingRoute
+  '/sash-windows': typeof SashWindowsRoute
+  '/secondary-glazing': typeof SecondaryGlazingRoute
+  '/vacuum-glazing': typeof VacuumGlazingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/casement-windows': typeof CasementWindowsRoute
+  '/draughtproofing': typeof DraughtproofingRoute
+  '/sash-windows': typeof SashWindowsRoute
+  '/secondary-glazing': typeof SecondaryGlazingRoute
+  '/vacuum-glazing': typeof VacuumGlazingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/casement-windows'
+    | '/draughtproofing'
+    | '/sash-windows'
+    | '/secondary-glazing'
+    | '/vacuum-glazing'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/casement-windows'
+    | '/draughtproofing'
+    | '/sash-windows'
+    | '/secondary-glazing'
+    | '/vacuum-glazing'
+  id:
+    | '__root__'
+    | '/'
+    | '/casement-windows'
+    | '/draughtproofing'
+    | '/sash-windows'
+    | '/secondary-glazing'
+    | '/vacuum-glazing'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CasementWindowsRoute: typeof CasementWindowsRoute
+  DraughtproofingRoute: typeof DraughtproofingRoute
+  SashWindowsRoute: typeof SashWindowsRoute
+  SecondaryGlazingRoute: typeof SecondaryGlazingRoute
+  VacuumGlazingRoute: typeof VacuumGlazingRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vacuum-glazing': {
+      id: '/vacuum-glazing'
+      path: '/vacuum-glazing'
+      fullPath: '/vacuum-glazing'
+      preLoaderRoute: typeof VacuumGlazingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secondary-glazing': {
+      id: '/secondary-glazing'
+      path: '/secondary-glazing'
+      fullPath: '/secondary-glazing'
+      preLoaderRoute: typeof SecondaryGlazingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sash-windows': {
+      id: '/sash-windows'
+      path: '/sash-windows'
+      fullPath: '/sash-windows'
+      preLoaderRoute: typeof SashWindowsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/draughtproofing': {
+      id: '/draughtproofing'
+      path: '/draughtproofing'
+      fullPath: '/draughtproofing'
+      preLoaderRoute: typeof DraughtproofingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casement-windows': {
+      id: '/casement-windows'
+      path: '/casement-windows'
+      fullPath: '/casement-windows'
+      preLoaderRoute: typeof CasementWindowsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +157,22 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CasementWindowsRoute: CasementWindowsRoute,
+  DraughtproofingRoute: DraughtproofingRoute,
+  SashWindowsRoute: SashWindowsRoute,
+  SecondaryGlazingRoute: SecondaryGlazingRoute,
+  VacuumGlazingRoute: VacuumGlazingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
